@@ -12,7 +12,7 @@ void setup() {
 }
 
 void draw () {
- background(130, 120, 110);
+ //background(130, 120, 110);
   
   //line(0, height / 2, width, height/2);
   //line(width/2, 0, width/2, height);
@@ -27,21 +27,25 @@ void draw () {
   
   if (upperLeft) {
       x = x - 50;
+      y = y - 50; 
       fill(100, 150, 50);
   }
   
   if (upperRight) {
     x = x + 50;
+    y = y + 50;
     fill(50, 100, 10);
   }
   
   if (bottomLeft) {
         y = y - 50; 
+        x = x + 50; 
       fill(10, 85, 200);
   }
   
   if (bottomRight) {
         y = y + 50; 
+        x = x - 50; 
       fill(200, 50, 50);
   }
 
