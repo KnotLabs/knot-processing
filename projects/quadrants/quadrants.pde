@@ -1,6 +1,8 @@
 int x = 0;
 int y = 0;
 
+int circleSize = 50;
+
 void setup() {
  size(500, 500);
 
@@ -50,12 +52,34 @@ void draw () {
   }
 
  // Draw the circle in the position taken from the x and y variables:
- ellipse(x, y, 50, 50);
+ ellipse(x, y, circleSize, circleSize);
 }
 
 void mousePressed() {
   // When the mouse is pressed, update x and y
   // to contain the current position of the mouse:
+  circleSize = nextCircleSize();
+}
+
+
+int nextCircleSize() {
   
+  int circle = circleSize; 
   
+  switch (circle) {
+    case 50:
+    circle = 100;
+    break;
+    case 100: 
+    circle = 200; 
+    break;
+    case 200:
+    circle = 300; 
+    break;
+    default:
+    circle = 50; 
+    break;
+  }
+  
+  return circle; 
 }
